@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "user1@gmail.com",
+      "password": "Password123!",
+      "customlabels": ["personal", "work"],
+      "emails": []
+    },
+    {
+      "email": "user2@gmail.com",
+      "password": "Password123!",
+      "customlabels": ["purchases", "todo"],
+      "emails": []
+    }
+  ]
+}
