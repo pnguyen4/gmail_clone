@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center">
+   <!-- TODO: split this form up into two components: 'identifier' and 'challenge' -->
+   <form [formGroup]="signinForm" (ngSubmit)="submit()"
+         class="">
+       <!-- TODO: styling -->
+       <div class="form-group">
+           <label for="signinEmail">Email</label>
+           <input type="text" class="form-control"
+                  id="signinEmail" name="email" formControlName="email">
+       </div>
+       <div class="form-group">
+           <label for="signinPassword">Password</label>
+           <input type="text" class="form-control"
+                  id="signinPassword" name="password" formControlName="password">
+       </div>
+       <button class='btn btn-primary'>Next</button>
+    </form>
+</div>
