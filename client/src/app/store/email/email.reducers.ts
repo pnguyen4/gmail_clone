@@ -7,7 +7,7 @@ export interface EmailState {
   status: 'pending' | 'loading' | 'error' | 'success';
 }
 
-export const initialState: EmailState = {
+const initialState: EmailState = {
   emails: [],
   error: null,
   status: 'pending'
@@ -15,17 +15,19 @@ export const initialState: EmailState = {
 
 export const emailReducer = createReducer(
   initialState,
+
   on(EmailAction.loadEmails, (state) => ({...state, status: 'loading'})),
+
   on(EmailApiAction.loadEmailsSuccess, (state, { emails }) => ({
     ...state,
     emails: emails,
     error: null,
     status: 'success'
   })),
+
   on(EmailApiAction.loadEmailsFailure, (state, { error }) => ({
     ...state,
     error: error,
     status: 'error'
   }))
-
 );

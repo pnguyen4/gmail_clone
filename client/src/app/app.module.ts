@@ -19,6 +19,8 @@ import { httpInterceptorProviders } from './http-interceptors';
 
 import { emailReducer } from './store/email/email.reducers';
 import { EmailEffects } from './store/email/email.effects';
+import { labelReducer } from './store/label/label.reducers';
+import { LabelEffects } from './store/label/label.effects';
 
 @NgModule({
   declarations: [
@@ -37,8 +39,8 @@ import { EmailEffects } from './store/email/email.effects';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ emails: emailReducer }),
-    EffectsModule.forRoot([EmailEffects])
+    StoreModule.forRoot({ emails: emailReducer, labels: labelReducer }),
+    EffectsModule.forRoot([EmailEffects, LabelEffects])
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

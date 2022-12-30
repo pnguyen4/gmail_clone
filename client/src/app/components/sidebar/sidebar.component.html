@@ -1,1 +1,16 @@
+<div style="border: 1px solid black;">
+
 <p>sidebar works!</p>
+<ul>
+    <li [ngClass]="{'selected': (curlabel$ | async) == 'inbox'}">Inbox</li>
+    <li [ngClass]="{'selected': (curlabel$ | async) == 'starred'}">Starred</li>
+    <li [ngClass]="{'selected': (curlabel$ | async) == 'sent'}">Sent</li>
+    <li [ngClass]="{'selected': (curlabel$ | async) == 'trash'}">Trash</li>
+</ul>
+
+<h4>Labels</h4>
+<ul>
+    <li *ngFor="let label of labels$ | async" [ngClass]="{'selected': (curlabel$ | async) == label}">{{label}}</li>
+</ul>
+
+</div>

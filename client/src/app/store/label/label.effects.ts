@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+import { of, from } from 'rxjs';
+import { mergeMap, map, catchError, withLatestFrom } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+
+import { LabelService } from '../../services/label.service';
+import { LabelApiAction } from './label.actions';
+
+// The GOAT: https://ngrx.io/guide/effects
+
+@Injectable()
+export class LabelEffects {
+
+  constructor(private actions$: Actions,
+              private store: Store,
+              private labelService: LabelService) {}
+
+  loadLabels$ = createEffect(() => this.actions$.pipe(
+    ofType('[Home Page] Load Labels'),
+    mergeMap(() =>
+      from(this.labelService.fetchLabelList()).pipe(
+        // TODO: rethink server return to actually get to error?
+        map((data) => LabelApiAction.loadLabelsSuccess({ labels : data.labels })),
+        catchError((error) => of(LabelApiAction.loadLabelsFailure({ error: error.msg })))
+      )
+    )
+  ));
+
+}

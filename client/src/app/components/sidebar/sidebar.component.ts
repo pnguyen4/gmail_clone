@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import { selectAllLabels, selectCurrentLabel } from '../../store/label/label.selectors';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  labels$ = this.store.select(selectAllLabels);
+  curlabel$ = this.store.select(selectCurrentLabel);
+
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
   }

@@ -13,10 +13,10 @@ import { EmailViewComponent } from '../components/email-view/email-view.componen
 const routes: Routes = [
   { path: 'signin', component: SigninComponent, canActivate: [LoginGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [LoginGuard] },
-  { path: 'mail', component: HomeComponent, canActivate: [AuthGuard], children: [
-    { path: '', redirectTo: 'inbox', pathMatch: 'full' },
-    { path: ':label', component: EmailListComponent },
-    { path: ':label/:id', component: EmailViewComponent }
+  { path: 'mail', redirectTo: 'mail/inbox', pathMatch: 'full' },
+  { path: 'mail/:label', component: HomeComponent, canActivate: [AuthGuard], children: [
+    { path: '', component: EmailListComponent },
+    { path: ':id', component: EmailViewComponent }
   ]},
   // TODO: maybe make a 404 page?
   { path: '**', redirectTo:'signin', pathMatch: 'full' }

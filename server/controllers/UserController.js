@@ -6,6 +6,15 @@ require("dotenv").config({ path: path.join(__dirname, '../.env') });
 const SALT_ROUNDS = 10;
 const User = require('../models/User');
 
+exports.get_labels = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+    return res.json({status: 'success', labels: user.customlabels});
+  } catch (error) {
+    return res.json({status: 'error', msg: "cannot find user"});
+  }
+};
+
 exports.signin_user = async (req, res) => {
   // TODO: check if user already signed in? maybe redundant if we're doing that on client
   try {
