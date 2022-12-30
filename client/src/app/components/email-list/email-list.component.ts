@@ -3,8 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Store } from '@ngrx/store';
 
 import { FooterComponent } from '../footer/footer.component';
-import { EmailService } from '../../services/email.service';
-import { selectEmails } from '../../store/email.selectors';
+import { selectEmails } from '../../store/email/email.selectors';
 
 @Component({
   selector: 'app-email-list',

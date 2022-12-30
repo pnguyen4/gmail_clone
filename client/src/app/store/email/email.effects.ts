@@ -3,7 +3,7 @@ import { of, from } from 'rxjs';
 import { mergeMap, map, catchError, withLatestFrom } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { EmailService } from '../services/email.service';
+import { EmailService } from '../../services/email.service';
 import { EmailApiAction } from './email.actions';
 
 // The GOAT: https://ngrx.io/guide/effects

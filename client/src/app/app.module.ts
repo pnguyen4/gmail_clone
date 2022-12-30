@@ -17,8 +17,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { httpInterceptorProviders } from './http-interceptors';
 
-import { emailReducer } from './store/email.reducers';
-import { EmailEffects } from './store/email.effects';
+import { emailReducer } from './store/email/email.reducers';
+import { EmailEffects } from './store/email/email.effects';
 
 @NgModule({
   declarations: [

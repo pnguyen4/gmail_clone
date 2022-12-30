@@ -1,10 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { EmailState } from './email.reducers';
-
-export interface AppState {
-  // we might want to store a lot of things in our store
-  emails: EmailState
-}
+import { AppState } from '../app.state';
 
 const selectEmailState = (state: AppState) => state.emails;
 
