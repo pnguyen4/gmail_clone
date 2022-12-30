@@ -1,1 +1,30 @@
-<p>signup works!</p>
+<div class="d-flex justify-content-center">
+   <!-- TODO: split this form up into two components: 'identifier' and 'challenge' -->
+   <form [formGroup]="signupForm" (ngSubmit)="submit()"
+         class="">
+       <!-- TODO: styling -->
+       <div class="form-group">
+           <label for="signupFname">First Name</label>
+           <input type="text" class="form-control"
+                  id="signupFname" name="firstname" formControlName="firstname">
+           <label for="signupLname">Last Name</label>
+           <input type="text" class="form-control"
+                  id="signupLname" name="lastname" formControlName="lastname">
+       </div>
+       <div class="form-group">
+           <label for="signupUser">Username</label>
+           <input type="text" class="form-control"
+                  id="signupUser" name="username" formControlName="user">
+       </div>
+       <div class="form-group">
+           <label for="signupPassword">Password</label>
+           <input type="password" class="form-control"
+                  id="signupPassword" name="password" formControlName="password">
+           <label for="signupConfirm">Confirm</label>
+           <input type="password" class="form-control"
+                  id="signupConfirm" name="confirm" formControlName="confirm">
+       </div>
+       <a href="" routerLink="/signin">Sign in instead</a>
+       <button class='btn btn-primary'>Next</button>
+    </form>
+</div>

@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
 export class SigninComponent implements OnInit {
   signinForm: FormGroup = this.fb.group({
     // TODO, add phone option? Also update Mongo schema to reflect this.
-    // TODO, add form validation
-    email: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
 
@@ -23,7 +22,6 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // TODO: hook to authservice signin() method
   submit(): void {
     //console.log(this.signinForm.getRawValue());
     if (!this.signinForm.valid) {
@@ -39,7 +37,6 @@ export class SigninComponent implements OnInit {
         alert(data.msg);
       }
     });
-
   }
 
 }

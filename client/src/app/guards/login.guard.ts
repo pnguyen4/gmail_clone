@@ -10,16 +10,16 @@ type GuardType = Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | bo
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): GuardType {
     if (this.auth.loggedIn()) {
-      return true;
+      this.router.navigate(['/mail']);
+      return false;
     }
-    this.router.navigate(['/signin']);
-    return false;
+    return true;
   }
   
 }

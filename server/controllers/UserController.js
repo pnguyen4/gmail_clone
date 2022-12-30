@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const path = require('path');
 require("dotenv").config({ path: path.join(__dirname, '../.env') });
 
+const SALT_ROUNDS = 10;
 const User = require('../models/User');
 
 exports.signin_user = async (req, res) => {
@@ -22,6 +23,25 @@ exports.signin_user = async (req, res) => {
     const token = jwt.sign(token_payload, process.env.JWT_KEY, { expiresIn: "30d" });
     return res.json({status: 'success', token, user: token_payload})
   } catch (error) {
+    console.log(error);
+    return res.json({status: 'error', msg: JSON.stringify(error)});
+  }
+};
 
+// TODO: revise error messages to be more like gmail
+exports.signup_user = async (req, res) => {
+  try {
+    let newuser = { email: req.body.email, password: req.body.password }
+    const passwordComplexity =
+          new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})')
+    if (!passwordComplexity.test(newuser.password)) {
+      return res.json({status: 'error', msg: 'Password does not meet complexity requirements'});
+    }
+    newuser.password = await bcrypt.hash(newuser.password, SALT_ROUNDS);
+    await User.create(newuser);
+    return res.json({status: 'success'})
+  } catch (error) {
+    console.log(error);
+    return res.json({status: 'error', msg: 'Username taken or invalid'});
   }
 };
