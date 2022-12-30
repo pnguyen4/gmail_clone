@@ -47,8 +47,7 @@ export class SignupComponent implements OnInit {
     }
 
     const email = `${newuser.user}@gmail.com`;
-    const emailFormat = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
-    if (!emailFormat.test(email)) {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       alert('Username not of correct format');
       return;
     }

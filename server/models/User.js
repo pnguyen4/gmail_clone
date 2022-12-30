@@ -7,7 +7,7 @@ const UserSchema = new Schema({
            required: true,
            unique: true,
            lowercase: true,
-           match: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/},
+           match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ },
   password: { type: String, required: true },
   customlabels: [{ type: String, default: [] }],
   emails: [{ type: refType, default: [] }]
