@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,7 +15,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
-import  { httpInterceptorProviders } from './http-interceptors';
+import { httpInterceptorProviders } from './http-interceptors';
+
+import { emailReducer } from './store/email.reducers';
+import { EmailEffects } from './store/email.effects';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,8 @@ import  { httpInterceptorProviders } from './http-interceptors';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ })
+    StoreModule.forRoot({ emails: emailReducer }),
+    EffectsModule.forRoot([EmailEffects])
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

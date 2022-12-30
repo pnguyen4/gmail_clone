@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { FooterComponent } from '../footer/footer.component';
 import { EmailService } from '../../services/email.service';
+import { selectEmails } from '../../store/email.selectors';
 
 @Component({
   selector: 'app-email-list',
@@ -12,11 +13,10 @@ import { EmailService } from '../../services/email.service';
 })
 export class EmailListComponent implements OnInit {
 
-  emails: any[] = [];
+  emails$ = this.store.select(selectEmails);
   label: string =  "";
 
-  constructor(private email: EmailService,
-              private store: Store,
+  constructor(private store: Store,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -24,12 +24,6 @@ export class EmailListComponent implements OnInit {
       this.label = params.get('label') ?? 'inbox';
     });
 
-    // TODO: use ngrx instead of local state, prrobably init in home component?
-    this.email.fetchEmailList(this.label).subscribe(data => {
-      if (data.status == "success") {
-        this.emails = data.emails;
-      }
-    });
   }
 
 }

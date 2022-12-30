@@ -1,7 +1,7 @@
 <p>email-list works!</p>
 <table>
     <tbody>
-        <tr *ngFor="let email of emails">
+        <tr *ngFor="let email of emails$ | async">
             <a routerLink="{{email._id}}">
                 <td>{{email.sender}}|</td>
                 <td>{{email.subject}}|</td>
