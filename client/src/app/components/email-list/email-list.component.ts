@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FooterComponent } from '../footer/footer.component';
+import { EmailService } from '../../services/email.service';
 
 @Component({
   selector: 'app-email-list',
@@ -8,9 +10,16 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class EmailListComponent implements OnInit {
 
-  constructor() { }
+  emails: any[] = [];
+
+  constructor(private email: EmailService) { }
 
   ngOnInit(): void {
+    this.email.fetchEmailList('inbox').subscribe(data => {
+      if (data.status == "success") {
+        this.emails = data.emails;
+      }
+    });
   }
 
 }

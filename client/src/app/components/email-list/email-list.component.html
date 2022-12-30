@@ -1,2 +1,12 @@
 <p>email-list works!</p>
+<table>
+    <tbody>
+        <tr *ngFor="let email of emails">
+            <td>{{email.sender}}|</td>
+            <td>{{email.subject}}|</td>
+            <td>{{email.body}}|</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
 <app-footer></app-footer>

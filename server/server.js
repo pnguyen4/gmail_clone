@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use(routes.UserRouter);
+app.use(routes.EmailRouter);
 
 app.all('*', (req, res) => {
   res.status(404).json({error: 'resource not found'});
