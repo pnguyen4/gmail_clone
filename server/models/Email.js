@@ -11,7 +11,8 @@ const EmailSchema = new Schema({
     message: "Email requires at least 1 recipient."
   } },
   owner: { type: refType, required: true },
-  labels: { type: [String], default: ["inbox"] }
+  labels: { type: [String], default: ["inbox"] },
+  date: { type: Date, default: Date.now() }
 });
 
 const Email = mongoose.model("Email", EmailSchema);

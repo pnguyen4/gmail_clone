@@ -2,9 +2,12 @@
 <table>
     <tbody>
         <tr *ngFor="let email of emails">
-            <td>{{email.sender}}|</td>
-            <td>{{email.subject}}|</td>
-            <td>{{email.body}}|</td>
+            <a routerLink="{{email._id}}">
+                <td>{{email.sender}}|</td>
+                <td>{{email.subject}}|</td>
+                <td>{{email.body}}|</td>
+                <td>{{email.date}}</td>
+            </a>
         </tr>
     </tbody>
 </table>
