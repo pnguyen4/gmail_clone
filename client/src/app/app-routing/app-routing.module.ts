@@ -14,11 +14,12 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent, canActivate: [LoginGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [LoginGuard] },
   { path: 'mail', component: HomeComponent, canActivate: [AuthGuard], children: [
-    { path: '', component: EmailListComponent },
-    { path: ':id', component: EmailViewComponent }
+    { path: '', redirectTo: 'inbox', pathMatch: 'full' },
+    { path: ':label', component: EmailListComponent },
+    { path: ':label/:id', component: EmailViewComponent }
   ]},
   // TODO: maybe make a 404 page?
-  { path: '**',redirectTo:'signin', pathMatch:'full' }
+  { path: '**', redirectTo:'signin', pathMatch: 'full' }
 ];
 
 @NgModule({

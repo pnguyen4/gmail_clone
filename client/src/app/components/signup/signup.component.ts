@@ -26,9 +26,10 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // TODO: make error messages more like gmail
   submit(): void {
     if (!this.signupForm.valid) {
-      alert('Form Invalid'); // TODO: make more like gmail
+      alert('Form Invalid');
       return;
     }
 
@@ -38,10 +39,24 @@ export class SignupComponent implements OnInit {
       return;
     }
 
+    const passwordComplexity =
+      new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})')
+    if (!passwordComplexity.test(newuser.password)) {
+      alert('Password does not meet complexity requirements');
+      return;
+    }
+
+    const email = `${newuser.user}@gmail.com`;
+    const emailFormat = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    if (!emailFormat.test(email)) {
+      alert('Username not of correct format');
+      return;
+    }
+
     newuser = {
       firstname: newuser.firstname,
       lastname: newuser.lastname,
-      email: `${newuser.user}@gmail.com`,
+      email,
       password: newuser.password
     }
     this.auth.signup(newuser).subscribe(data => {
