@@ -7,7 +7,7 @@ exports.get_emails = async (req, res) => {
   try {
     const filter = {
       owner: req.user.id,
-      labels: req.params.label
+      //labels: req.params.label
     }
 
     const emails = await Email.find(filter);

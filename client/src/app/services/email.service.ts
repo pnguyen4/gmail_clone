@@ -11,7 +11,7 @@ export class EmailService {
 
   constructor(private http: HttpClient) { }
 
-  fetchEmailList(label: string): Observable<any> {
-    return this.http.get<any>(`${API_URL}/mail/${label}`);
+  fetchEmailList(): Observable<any> {
+    return this.http.get<any>(`${API_URL}/mail`);
   }
 }

@@ -2,15 +2,26 @@
 
 <p>sidebar works!</p>
 <ul>
-    <li [ngClass]="{'selected': (curlabel$ | async) == 'inbox'}">Inbox</li>
-    <li [ngClass]="{'selected': (curlabel$ | async) == 'starred'}">Starred</li>
-    <li [ngClass]="{'selected': (curlabel$ | async) == 'sent'}">Sent</li>
-    <li [ngClass]="{'selected': (curlabel$ | async) == 'trash'}">Trash</li>
+    <li [ngClass]="{'selected': (curlabel$ | async) == 'inbox'}">
+        <a href="" routerLink="/mail/inbox">Inbox</a>
+    </li>
+    <li [ngClass]="{'selected': (curlabel$ | async) == 'starred'}">
+        <a href="" routerLink="/mail/starred">Starred</a>
+    </li>
+    <li [ngClass]="{'selected': (curlabel$ | async) == 'sent'}">
+        <a href="" routerLink="/mail/sent">Sent</a>
+    </li>
+    <li [ngClass]="{'selected': (curlabel$ | async) == 'trash'}">
+        <a href="" routerLink="/mail/trash">Trash</a>
+    </li>
 </ul>
 
 <h4>Labels</h4>
 <ul>
-    <li *ngFor="let label of labels$ | async" [ngClass]="{'selected': (curlabel$ | async) == label}">{{label}}</li>
+    <li *ngFor="let label of labels$ | async"
+        [ngClass]="{'selected': (curlabel$ | async) == label}">
+        <a href="" routerLink="/mail/{{label}}">{{label}}</a>
+    </li>
 </ul>
 
 </div>

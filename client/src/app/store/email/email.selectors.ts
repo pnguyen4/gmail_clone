@@ -10,7 +10,7 @@ const selectLabelState = (state: AppState) => state.labels;
 export const selectEmails = createSelector<any, any, any>(
   selectEmailState,
   selectLabelState,
-  // maybe provide some condition to get certain # of emails and /w specific label?
-  // TODO: use label state's current_label to filter emails
-  (state: EmailState) => state.emails
+  (emailState: EmailState, labelState: LabelState) =>
+    emailState.emails.filter((email) =>
+      email.labels.includes(labelState.current_label))
 );
