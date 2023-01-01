@@ -1,0 +1,69 @@
+header {
+    div {
+        display: inline-block;
+    }
+    padding-top: 8px;
+    margin-bottom: -5px;
+    padding-left: 8px;
+}
+
+.leftitem {
+    min-width: 238px;
+    padding-right: 30px;
+}
+
+.menu {
+    padding: 12px;
+    margin: 0 4px;
+    display: inline-block;
+}
+
+svg {
+    height: 24px;
+    width: 24px;
+    color: #5f6368;
+    opacity: 0.6;
+}
+
+form {
+    padding-left: 10px;
+}
+
+input {
+    background-color: #eaf1fb;
+    height: 46px;
+    padding-left: 56px;
+    width: 38vw;
+    border: none;
+}
+
+input:focus {
+    background-color: white;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 1px 0 rgba(65,69,73,.3),0 1px 3px 1px rgba(65,69,73,.15);
+}
+
+.searchbtn {
+    float: left;
+    background: none;
+    border: none;
+    outline: none;
+    display: inline;
+    position: absolute;
+    padding: 13px;
+    margin: 5px;
+    top: 0px;
+}
+
+.searchoptions {
+    float: right;
+    background: none;
+    border: none;
+    outline: none;
+    display: inline;
+    position: relative;
+    padding: 13px;
+    margin: 5px;
+    left: -57px;
+    top: -7px;
+}
