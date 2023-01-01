@@ -1,0 +1,101 @@
+.signin-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.signin {
+    width: 450px;
+    height: auto;
+    min-height: 500px;
+    background-color: white;
+    padding: 48px 40px 36px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin: 0 auto;
+    min-height: 0;
+}
+
+.logo {
+    text-align: center;
+}
+
+.heading {
+    font-size: 24px;
+    padding-top: 16px;
+    text-align: center;
+}
+
+.subheading {
+    font-size: 16px;
+    padding-top: 8px;
+    text-align: center;
+}
+
+form {
+    padding-top: 24px;
+    .form-group {
+        padding-bottom: 8px;
+    }
+}
+
+input {
+    padding: 13px 15px;
+    margin: 1px;
+}
+
+.formend {
+    margin-top: 26px;
+    padding-bottom: 20px;
+    a {
+        display: inline-block;
+        margin-top: 8px;
+        text-decoration: none;
+        font-size: .875rem;
+    }
+}
+
+.form-helpmsg {
+    padding-top: 26px;
+    font-size: 13px;
+    padding-bottom: 3px;
+    letter-spacing: .0107142857em;
+    line-height: 1.4286;
+    a {
+        text-decoration: none;
+        font-weight: 600;
+    }
+}
+
+.btn-submit {
+    vertical-align: middle;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    background-color: #1a73e8;
+    padding: 0 24px 0 24px;
+    height: 36px;
+    float: right;
+    font-size: .875rem;
+    font-weight: 400;
+    letter-spacing: .0107142857em;
+}
+
+/*
+div.signinEmail {
+    transform: scale(0.75) translateY(-39px);
+    background: #fff;
+    bottom: 17px;
+    color: #5f6368;
+    font-size: 16px;
+    font-weight: 400;
+    left: 8px;
+    top: -23px;
+    padding: 0 8px;
+    width: 60px;
+    z-index: 1;
+    position: relative;
+    transform-origin: bottom left;
+}
+ */

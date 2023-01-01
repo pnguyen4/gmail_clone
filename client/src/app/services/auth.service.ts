@@ -27,6 +27,11 @@ export class AuthService {
     return this.http.post<any>(`${API_URL}/signup`, newuser, {headers: headers});
   }
 
+  signout(): void {
+    localStorage.clear();
+    // TODO: handle this on server side also?
+  }
+
   saveToken(token: string, user: string) {
     localStorage.setItem('token', token);
     localStorage.setItem('user', user);

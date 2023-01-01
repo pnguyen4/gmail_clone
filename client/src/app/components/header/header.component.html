@@ -36,7 +36,7 @@
     <div class="signout" [ngClass]="{'hidden' : !visible}">
         <div class="placeholder"></div>
         <div style="display:flex; justify-content: center;">
-            <button class="signoutbtn btn btn-outline-secondary">Sign out</button>
+            <button class="signoutbtn btn btn-outline-secondary" (click)="signout()">Sign out</button>
         </div>
         <div class="placeholder"></div>
     </div>
