@@ -7,6 +7,7 @@ export const EmailAction = createActionGroup({
   source: 'Home Page',
   events: {
     'Load Emails': emptyProps(),
+    'Set Current Email': props<{ id: string }>()
   }
 });
 

@@ -14,3 +14,9 @@ export const selectEmails = createSelector<any, any, any>(
     emailState.emails.filter((email) =>
       email.labels.includes(labelState.current_label))
 );
+
+export const selectEmailById = (props: {id: string}) => createSelector<any, any, any>(
+  selectEmailState,
+  (emailState: EmailState) =>
+    emailState.emails.find(email => email._id == emailState.current_email)
+);

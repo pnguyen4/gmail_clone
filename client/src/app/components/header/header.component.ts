@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  visible: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggle(): void {
+    this.visible = !this.visible;
   }
 
 }

@@ -1,1 +1,7 @@
 <p>email-view works! Email ID: {{id}}</p>
+<div>
+    {{(email$ | async).subject}}
+</div>
+<div style="word-wrap: break-word; word-break: break-all;">
+    {{(email$ | async).body}}
+</div>

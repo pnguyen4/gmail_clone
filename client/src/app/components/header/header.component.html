@@ -29,6 +29,15 @@
             </button>
         </form>
     </div>
-    <div>
+    <div class="signouttoggle" (click)="toggle()">
+        <img src=
+"https://cdn3.iconfinder.com/data/icons/social-messaging-productivity-6/128/profile-circle2-512.png" height="32" width="32">
+    </div>
+    <div class="signout" [ngClass]="{'hidden' : !visible}">
+        <div class="placeholder"></div>
+        <div style="display:flex; justify-content: center;">
+            <button class="signoutbtn btn btn-outline-secondary">Sign out</button>
+        </div>
+        <div class="placeholder"></div>
     </div>
 </header>
