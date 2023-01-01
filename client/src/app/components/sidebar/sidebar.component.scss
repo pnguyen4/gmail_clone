@@ -50,16 +50,6 @@ a {
     color: inherit;
 }
 
-.primaryselected {
-    font-weight: 600;
-    background-color: #d3e3fd;
-}
-
-.secondaryselected {
-    font-weight: 600;
-    background-color: #e1e3e1;
-}
-
 @mixin labelicon {
     background-position: center;
     background-repeat: no-repeat;
@@ -92,6 +82,32 @@ a {
     @include labelicon;
     background:
         url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/delete_baseline_nv700_20dp.png');
+}
+
+.primaryselected {
+    font-weight: 600;
+    background-color: #d3e3fd;
+    .inbox {
+      background-image:
+      url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/inbox_fill_baseline_p900_20dp.png');
+    }
+    .starred {
+      background-image:
+      url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/star_fill_baseline_p900_20dp.png');
+    }
+    .sent {
+      background-image:
+      url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/send_fill_baseline_p900_20dp.png');
+    }
+    .trash {
+      background-image:
+      url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/delete_fill_baseline_p900_20dp.png');
+    }
+}
+
+.secondaryselected {
+    font-weight: 600;
+    background-color: #e1e3e1;
 }
 
 .custom {

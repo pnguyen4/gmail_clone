@@ -1,0 +1,44 @@
+.subjectline {
+    padding: 20px 0 8px 72px;
+    h2 {
+        font-size: 1.375rem;
+        color: #222;
+        font-weight: 400;
+        padding-right: 10px;
+        word-break: break-word;
+    }
+}
+
+.emailmainview {
+    display: flex;
+    .userpicture {
+        display: flex;
+        align-items: center;
+        height: 80px;
+        padding-left: 16px;
+        padding-right: 16px;
+        .profile {
+            border-radius: 50%;
+        }
+    }
+}
+
+.emailmaincontent {
+    .emailsender {
+        padding-top: 20px;
+        font-size: .875rem;
+        line-height: 20px;
+        vertical-align: top;
+    }
+    .fullemail, .emailrecipient {
+        font-size: .75rem;
+        vertical-align: top;
+        color: #5e5e5e;
+    }
+    .emailbody {
+        font-size: .875rem;
+        padding-top: 8px;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+}

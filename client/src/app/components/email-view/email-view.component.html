@@ -1,7 +1,25 @@
-<p>email-view works! Email ID: {{id}}</p>
-<div>
-    {{(email$ | async).subject}}
+<div style="height: 48px;">
 </div>
-<div style="word-wrap: break-word; word-break: break-all;">
-    {{(email$ | async).body}}
+<div>
+    <div class="subjectline">
+        <h2>{{(email$ | async).subject}}</h2>
+    </div>
+    <div class="emailmainview">
+        <div class="userpicture">
+            <img class="profile" src="https://lh3.googleusercontent.com/a/default-user=s40-p">
+        </div>
+        <div class="emailmaincontent">
+            <div class="emailsender">
+                <b>{{(email$ | async).sender.substring(0, (email$ | async).sender.indexOf('@'))}}</b>
+                <span class="fullemail"> <{{(email$ | async).sender}}></span>
+            </div>
+            <div class="emailrecipient">
+                to {{((email$ | async).labels.includes('inbox')) ? 'me' : (email$ | async).recipients[0].substring(0, (email$ | async).recipients[0].indexOf('@'))}}
+            </div>
+            <div></div>
+            <div class="emailbody" >
+                {{(email$ | async).body}}
+            </div>
+        </div>
+    </div>
 </div>
