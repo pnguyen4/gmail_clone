@@ -3,10 +3,9 @@
     </div>
     <table>
         <tbody>
-            <tr *ngFor="let email of emails$ | async">
+            <tr *ngFor="let email of emails$ | async" (click)="goto(email._id)">
                 <td><div class="checkbox"></div></td>
                 <td><div class="star"></div></td>
-                <!--<a routerLink="{{email._id}}">-->
                 <td class="sender">
                     <div class="tdcontent">
                         {{email.sender.substring(0, email.sender.indexOf('@'))}}
