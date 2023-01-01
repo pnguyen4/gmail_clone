@@ -3,20 +3,22 @@
     </div>
     <table>
         <tbody>
-            <tr *ngFor="let email of emails$ | async" (click)="goto(email._id)">
+            <tr *ngFor="let email of emails$ | async">
                 <td><div class="checkbox"></div></td>
                 <td><div class="star"></div></td>
-                <td class="sender">
+                <td class="sender" (click)="goto(email._id)">
                     <div class="tdcontent">
                         {{email.sender.substring(0, email.sender.indexOf('@'))}}
                     </div>
                 </td>
-                <td class="mail">
+                <td class="mail" (click)="goto(email._id)">
                     <div class="tdcontent">
                         {{email.subject}} <span class="body">- {{email.body}}</span>
                     </div>
                 </td>
-                <td class="date">{{dateFormat(email.date)}}</td>
+                <td class="date" (click)="goto(email._id)">
+                    {{dateFormat(email.date)}}
+                </td>
             </tr>
         </tbody>
     </table>
