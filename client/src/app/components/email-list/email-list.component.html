@@ -1,15 +1,26 @@
-<p>email-list works!</p>
-<table>
-    <tbody>
-        <tr *ngFor="let email of emails$ | async">
-            <a routerLink="{{email._id}}">
-                <td>{{email.sender}}|</td>
-                <td>{{email.subject}}|</td>
-                <td>{{email.body}}|</td>
-                <td>{{email.date}}</td>
-            </a>
-        </tr>
-    </tbody>
-</table>
-<hr>
-<app-footer></app-footer>
+<div class="bg-white rounded-4 email-list">
+    <div style="height: 100px;">
+    </div>
+    <table>
+        <tbody>
+            <tr *ngFor="let email of emails$ | async">
+                <td><div class="checkbox"></div></td>
+                <td><div class="star"></div></td>
+                <!--<a routerLink="{{email._id}}">-->
+                <td class="sender">
+                    <div class="tdcontent">
+                        {{email.sender.substring(0, email.sender.indexOf('@'))}}
+                    </div>
+                </td>
+                <td class="mail">
+                    <div class="tdcontent">
+                        {{email.subject}} <span class="body">- {{email.body}}</span>
+                    </div>
+                </td>
+                <td class="date">{{dateFormat(email.date)}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <app-footer></app-footer>
+</div>

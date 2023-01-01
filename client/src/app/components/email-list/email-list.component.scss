@@ -1,0 +1,84 @@
+.email-list {
+    height: 94.25vh;
+}
+
+@mixin email-button {
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20px;
+    width: 20px;
+    opacity: 0.32;
+}
+
+.checkbox {
+    @include email-button;
+    background-image:     url("https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/check_box_outline_blank_baseline_nv700_20dp.png");
+}
+
+.star {
+    @include email-button;
+    background-image:
+       url("https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/star_baseline_nv700_20dp.png");
+}
+
+table {
+    font-size: .875rem;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: 100%;
+    border-color: gray;
+    table-layout: fixed;
+    border-spacing: 0;
+    min-height: 577px;
+}
+
+tr {
+    background: #f2f6fc;
+    color: #202124;
+    display: flex;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    //-webkit-box-shadow: inset 0 -1px 0 0 rgba(100,121,143,0.122);
+    box-shadow: inset 0 -1px 0 0 rgba(100,121,143,0.122);
+}
+
+a {
+    text-decoration: none;
+}
+
+td {
+    padding-left: 10px;
+}
+
+td.sender {
+    max-width: 168px;
+    flex-basis: 168px;
+    padding-right: 32px;
+}
+
+.tdcontent {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mail {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.body {
+    color: #5f6368;
+}
+
+.date {
+    flex: 0 0 auto;
+    color: #5f6368;
+    font-size: .75rem;
+    padding-left: 44px;
+    color: #5f6368;
+    padding-right: 16px;
+}

@@ -17,4 +17,9 @@ export class EmailListComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  dateFormat(mydate: string): string {
+    let date = new Date(mydate);
+    return date.toLocaleString('en-US', {month: 'short', day: 'numeric'});
+  }
+
 }

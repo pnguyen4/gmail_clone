@@ -1,16 +1,22 @@
 {
   "emails": [
     {
-    "subject": "hello, user 2",
-    "body": "test body",
-    "sender": "user1@gmail.com",
-    "recipients": ["user2@gmail.com"]
+      "subject": "hello, user 2",
+      "body": "test body",
+      "sender": "user1@gmail.com",
+      "recipients": ["user2@gmail.com"]
     },
     {
-    "subject": "hello, user 1",
-    "body": "test body",
-    "sender": "user2@gmail.com",
-    "recipients": ["user1@gmail.com"]
-    }
+      "subject": "hello, user 1",
+      "body": "test body",
+      "sender": "user2@gmail.com",
+      "recipients": ["user1@gmail.com"]
+    },
+    {
+      "subject": "another test email",
+      "body": "aouaeuaoaoaoeutnshaoestnuhaoestnuhasonetustnaoeuatnsoeuatnoseusatnoeutnsaohesutnaoheutnsaohutseusatoeneuaoeuaoeuaoentuhaoetnuhaoetnsuhaoetnsuhatnsoehuatnsoeusntaohusnaoeuaoeuaoeuaoeuanstoheulaoetunsahot",
+      "sender": "user2@gmail.com",
+      "recipients": ["user1@gmail.com"]
+     }
   ]
 }
