@@ -1,3 +1,110 @@
-.selected {
-    background-color: yellow;
+.compose {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    padding-left: 8px;
+}
+
+.compose-btn {
+    display: inline-flex;
+    padding-right: 20px;
+    background-color: #c2e7ff;
+    height: 56px;
+    min-width: 96px;
+    text-align: center;
+    border-radius: 16px;
+    align-items: center;
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+.compose-btn::before {
+    background-image:
+        url('https://www.gstatic.com/images/icons/material/system_gm/1x/create_black_24dp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    height: 20px;
+    width: 20px;
+    min-width: 56px;
+    content: "";
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    font-size: .875rem;
+    border-radius: 0 16px 16px 0;
+    height: 32px;
+    align-items: center;
+    padding-right: 12px;
+    padding-left: 26px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.primaryselected {
+    font-weight: 600;
+    background-color: #d3e3fd;
+}
+
+.secondaryselected {
+    font-weight: 600;
+    background-color: #e1e3e1;
+}
+
+@mixin labelicon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    margin-right: 18px;
+}
+
+.inbox {
+    @include labelicon;
+    background:
+        url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/inbox_baseline_nv700_20dp.png');
+}
+
+.starred {
+    @include labelicon;
+    background:
+        url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/star_baseline_nv700_20dp.png');
+}
+
+.sent {
+    @include labelicon;
+    background:
+        url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/send_baseline_nv700_20dp.png');
+}
+
+.trash {
+    @include labelicon;
+    background:
+        url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/delete_baseline_nv700_20dp.png');
+}
+
+.customlabelsheader {
+    font-size: 16px;
+    font-weight: 550;
+    padding-left: 26px;
+    padding-top: 8px;
+    padding-right: 8px;
+    margin-bottom: 12px;
+}
+
+.custom {
+    @include labelicon;
+    background:
+url('https://www.gstatic.com/images/icons/material/system_gm_filled/1x/label_gm_grey_24dp.png') center/contain
 }

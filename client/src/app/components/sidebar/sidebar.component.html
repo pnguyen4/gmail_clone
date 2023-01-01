@@ -1,27 +1,45 @@
-<div style="border: 1px solid black;">
-
-<p>sidebar works!</p>
-<ul>
-    <li [ngClass]="{'selected': (curlabel$ | async) == 'inbox'}">
-        <a routerLink="/mail/inbox">Inbox</a>
-    </li>
-    <li [ngClass]="{'selected': (curlabel$ | async) == 'starred'}">
-        <a routerLink="/mail/starred">Starred</a>
-    </li>
-    <li [ngClass]="{'selected': (curlabel$ | async) == 'sent'}">
-        <a routerLink="/mail/sent">Sent</a>
-    </li>
-    <li [ngClass]="{'selected': (curlabel$ | async) == 'trash'}">
-        <a routerLink="/mail/trash">Trash</a>
-    </li>
-</ul>
-
-<h4>Labels</h4>
-<ul>
-    <li *ngFor="let label of labels$ | async"
-        [ngClass]="{'selected': (curlabel$ | async) == label}">
-        <a routerLink="/mail/{{label}}">{{label}}</a>
-    </li>
-</ul>
-
+<div class="compose">
+    <div class="compose-btn">Compose</div>
 </div>
+<ul>
+    <a routerLink="/mail/inbox">
+        <li [ngClass]="{'primaryselected': (curlabel$ | async) == 'inbox'}">
+            <div class="inbox"></div>Inbox
+        </li>
+    </a>
+
+    <a routerLink="/mail/starred">
+        <li [ngClass]="{'primaryselected': (curlabel$ | async) == 'starred'}">
+            <div class="starred"></div>Starred
+        </li>
+    </a>
+
+    <a routerLink="/mail/sent">
+        <li [ngClass]="{'primaryselected': (curlabel$ | async) == 'sent'}">
+            <div class="sent"></div>Sent
+        </li>
+    </a>
+
+    <a routerLink="/mail/trash">
+    <li [ngClass]="{'primaryselected': (curlabel$ | async) == 'trash'}">
+        <div class="trash"></div>Trash
+    </li>
+    </a>
+</ul>
+
+<div class="customlabelsheader">Labels</div>
+<ul>
+    <a *ngFor="let label of labels$ | async" routerLink="/mail/{{label}}">
+        <li [ngClass]="{'secondaryselected': (curlabel$ | async) == label}">
+            <div class="custom"></div>{{label}}
+        </li>
+    </a>
+    <!--
+    <li *ngFor="let label of labels$ | async"
+        [ngClass]="{'secondaryselected': (curlabel$ | async) == label}">
+        <a routerLink="/mail/{{label}}">
+            <div class="custom"></div>{{label}}
+        </a>
+    </li>
+    -->
+</ul>
