@@ -1,0 +1,27 @@
+.footercontainer {
+    padding: 16px 0 16px 0;
+    margin: 0 16px 0 16px;
+}
+
+.footeritem {
+    width: 33.3%;
+    float: left;
+    font-size: .75rem;
+    color: #5f6368;
+}
+
+.centeritem {
+    text-align: center;
+}
+
+.rightitem {
+    text-align: right;
+}
+
+.bar {
+    width: 40%;
+    background-color: #dadce0;
+    border-radius: 8px;
+    height: 6px;
+    margin: 7px 0;
+}

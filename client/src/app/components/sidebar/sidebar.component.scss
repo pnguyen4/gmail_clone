@@ -94,6 +94,12 @@ a {
         url('//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/delete_baseline_nv700_20dp.png');
 }
 
+.custom {
+    @include labelicon;
+    background:
+url('https://www.gstatic.com/images/icons/material/system_gm_filled/1x/label_gm_grey_24dp.png') center/contain
+}
+
 .customlabelsheader {
     font-size: 16px;
     font-weight: 550;
@@ -101,10 +107,4 @@ a {
     padding-top: 8px;
     padding-right: 8px;
     margin-bottom: 12px;
-}
-
-.custom {
-    @include labelicon;
-    background:
-url('https://www.gstatic.com/images/icons/material/system_gm_filled/1x/label_gm_grey_24dp.png') center/contain
 }
