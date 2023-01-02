@@ -124,3 +124,92 @@ url('https://www.gstatic.com/images/icons/material/system_gm_filled/1x/label_gm_
     padding-right: 8px;
     margin-bottom: 12px;
 }
+
+.hidden {
+    visibility: hidden
+}
+
+.newlabelbtn {
+    background-image:
+        url(//ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/add_large_baseline_nv700_20dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    float: right;
+    padding-top: 8px;
+}
+
+$lblfrmwidth: 504px;
+$lblfrmheight: 200px;
+
+.newlabelformbackground {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(32,33,36,0.6);
+    position: fixed;
+    top: 0;
+    opacity: 0.75;
+}
+
+.newlabelform {
+    position: absolute;
+    left: calc(50vw - $lblfrmwidth/2);
+    top: calc(50vh - $lblfrmheight/2);
+    width: $lblfrmwidth;
+    height: $lblfrmheight;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 14%),
+                0px 3px 1px -2px rgb(0 0 0 / 12%),
+                0px 1px 5px 0px rgb(0 0 0 / 20%);
+
+    .formheader {
+        padding: 24px 24px 16px;
+        font-size: 1.375rem;
+        color: #212121;
+        line-height: 24px;
+    }
+
+    .labelinput {
+        padding: 0 24px;
+        label {
+            color: #5f6368;
+            font-size: .875rem;
+        }
+        input {
+            width: 415px;
+        }
+    }
+}
+
+.labelbtns {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 24px;
+    button.ok {
+        background-color: #1a73e8;
+        color: #fff;
+    }
+    button.cancel {
+        color: #444746;
+        background-color: #fff;
+    }
+    button.cancel:hover {
+        background-color: #e0e0e0;
+    }
+    button {
+        font-weight: 500;
+        margin: 0 0 0 8px;
+        font-weight: 500;
+        height: 36px;
+        min-width: 80px;
+        outline: none;
+        border: none;
+        padding: 0 16px;
+        font-size: .875rem;
+        border-radius: 99999px;
+    }
+}

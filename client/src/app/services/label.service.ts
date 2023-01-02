@@ -14,4 +14,12 @@ export class LabelService {
   fetchLabelList(): Observable<any> {
     return this.http.get<any>(`${API_URL}/labels`);
   }
+
+  newLabel(label: string): Observable<any> {
+    return this.http.put<any>(`${API_URL}/labels`, {label});
+  }
+
+  deleteLabel(label: string): Observable<any> {
+    return this.http.put<any>(`${API_URL}/labels`, {label});
+  }
 }

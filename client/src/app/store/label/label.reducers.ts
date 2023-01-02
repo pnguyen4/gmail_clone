@@ -25,6 +25,11 @@ export const labelReducer = createReducer(
     current_label: label
   })),
 
+  on(LabelAction.createNewLabel, (state, { label }) => ({
+    ...state,
+    labels: [...state.labels, label]
+  })),
+
   on(LabelApiAction.loadLabelsSuccess, (state, { labels }) => ({
     ...state,
     labels: labels,

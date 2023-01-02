@@ -27,7 +27,10 @@
     </a>
 </ul>
 
-<div class="customlabelsheader">Labels</div>
+<div class="customlabelsheader">
+    Labels
+    <div class="newlabelbtn" (click)="showlabelprompt()"></div>
+</div>
 <ul>
     <a *ngFor="let label of labels$ | async" routerLink="/mail/{{label}}">
         <li [ngClass]="{'secondaryselected': (curlabel$ | async) == label}">
@@ -43,3 +46,20 @@
     </li>
     -->
 </ul>
+
+<div class="newlabelformbackground" [ngClass]="{'hidden': !labelprompt}">
+</div>
+
+<div class="newlabelform" [ngClass]="{'hidden': !labelprompt}">
+    <div class="formheader">New label</div>
+    <div class="labelinput">
+        <div>
+            <label for="labelname">Please enter a new label name</label>
+        </div>
+        <input type="text" id="labelname" [formControl]="labelname">
+    </div>
+    <div class="labelbtns">
+        <button class="ok" (click)="createLabel()">Create</button>
+        <button class="cancel" (click)="hidelabelprompt()">Cancel</button>
+    </div>
+</div>

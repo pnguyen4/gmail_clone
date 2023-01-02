@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of, from } from 'rxjs';
-import { mergeMap, map, catchError, withLatestFrom } from 'rxjs/operators';
+import { of, from, EMPTY } from 'rxjs';
+import { switchMap, mergeMap, map, catchError, withLatestFrom } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
@@ -25,6 +25,11 @@ export class LabelEffects {
         catchError((error) => of(LabelApiAction.loadLabelsFailure({ error: error.msg })))
       )
     )
+  ));
+
+  newLabel$ = createEffect(() => this.actions$.pipe(
+    ofType('[Home Page] Create New Label'),
+    switchMap((action: any) => this.labelService.newLabel(action.label).pipe())
   ));
 
 }

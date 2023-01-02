@@ -4,7 +4,8 @@ export const LabelAction = createActionGroup({
   source: 'Home Page',
   events: {
     'Load Labels': emptyProps(),
-    'Set Current Label': props<{ label: string }>()
+    'Set Current Label': props<{ label: string }>(),
+    'Create New Label': props<{ label: string }>()
   }
 });
 
