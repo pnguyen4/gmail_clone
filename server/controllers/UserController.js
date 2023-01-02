@@ -30,6 +30,22 @@ exports.add_label = async (req, res) => {
   }
 }
 
+exports.rm_label = async (req, res) => {
+  try {
+    if (!req.body.label) {
+      return res.json({status: 'error', msg: 'no label name'});
+    }
+    await User.updateOne({_id: req.user.id},
+                         { "$pull":
+                           { customlabels: req.body.label }
+                         });
+    // TODO: remove this label from all of user's emails
+    return res.json({status: 'success'})
+  } catch (error) {
+    return res.json({status: 'error', error});
+  }
+}
+
 exports.signin_user = async (req, res) => {
   // TODO: check if user already signed in? maybe redundant if we're doing that on client
   try {

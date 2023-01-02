@@ -32,4 +32,9 @@ export class LabelEffects {
     switchMap((action: any) => this.labelService.newLabel(action.label).pipe())
   ));
 
+  delLabel$ = createEffect(() => this.actions$.pipe(
+    ofType('[Home Page] Delete Label'),
+    switchMap((action: any) => this.labelService.deleteLabel(action.label).pipe())
+  ));
+
 }

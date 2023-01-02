@@ -16,10 +16,10 @@ export class LabelService {
   }
 
   newLabel(label: string): Observable<any> {
-    return this.http.put<any>(`${API_URL}/labels`, {label});
+    return this.http.put<any>(`${API_URL}/addlabel`, {label});
   }
 
   deleteLabel(label: string): Observable<any> {
-    return this.http.put<any>(`${API_URL}/labels`, {label});
+    return this.http.put<any>(`${API_URL}/rmlabel`, {label});
   }
 }

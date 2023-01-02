@@ -30,6 +30,11 @@ export const labelReducer = createReducer(
     labels: [...state.labels, label]
   })),
 
+  on(LabelAction.deleteLabel, (state, { label }) => ({
+    ...state,
+    labels: state.labels.filter(val => val != label)
+  })),
+
   on(LabelApiAction.loadLabelsSuccess, (state, { labels }) => ({
     ...state,
     labels: labels,

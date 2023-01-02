@@ -35,16 +35,10 @@
     <a *ngFor="let label of labels$ | async" routerLink="/mail/{{label}}">
         <li [ngClass]="{'secondaryselected': (curlabel$ | async) == label}">
             <div class="custom"></div>{{label}}
+            <!-- TODO: make this open an actual drop down menu instead of directly deleting -->
+            <div class="labelmenu" (click)="deleteLabel(label)"></div>
         </li>
     </a>
-    <!--
-    <li *ngFor="let label of labels$ | async"
-        [ngClass]="{'secondaryselected': (curlabel$ | async) == label}">
-        <a routerLink="/mail/{{label}}">
-            <div class="custom"></div>{{label}}
-        </a>
-    </li>
-    -->
 </ul>
 
 <div class="newlabelformbackground" [ngClass]="{'hidden': !labelprompt}">
