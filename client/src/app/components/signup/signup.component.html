@@ -1,30 +1,55 @@
-<div class="d-flex justify-content-center">
-   <!-- TODO: split this form up into two components: 'identifier' and 'challenge' -->
-   <form [formGroup]="signupForm" (ngSubmit)="submit()"
-         class="">
-       <!-- TODO: styling -->
-       <div class="form-group">
-           <label for="signupFname">First Name</label>
-           <input type="text" class="form-control"
-                  id="signupFname" name="firstname" formControlName="firstname">
-           <label for="signupLname">Last Name</label>
-           <input type="text" class="form-control"
-                  id="signupLname" name="lastname" formControlName="lastname">
-       </div>
-       <div class="form-group">
-           <label for="signupUser">Username</label>
-           <input type="text" class="form-control"
-                  id="signupUser" name="username" formControlName="user">
-       </div>
-       <div class="form-group">
-           <label for="signupPassword">Password</label>
-           <input type="password" class="form-control"
-                  id="signupPassword" name="password" formControlName="password">
-           <label for="signupConfirm">Confirm</label>
-           <input type="password" class="form-control"
-                  id="signupConfirm" name="confirm" formControlName="confirm">
-       </div>
-       <a href="" routerLink="/signin">Sign in instead</a>
-       <button class='btn btn-primary'>Next</button>
-    </form>
+<div class="container signup-container">
+    <div class="signup row">
+        <div class="signupform col">
+            <div class="logo">
+                <img src="https://about.google/assets-stories-2021/img/glue-google-color-logo.svg">
+            </div>
+
+            <div class="heading">Create your Google Account</div>
+            <div class="subheading">to continue to Gmail</div>
+
+            <!-- TODO: split this form up into two components: 'identifier' and 'challenge' -->
+            <form [formGroup]="signupForm" (ngSubmit)="submit()"
+                  class="">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="First name"
+                           id="signupFname" name="firstname" formControlName="firstname">
+                    <input type="text" class="form-control" placeholder="Last name"
+                           id="signupLname" name="lastname" formControlName="lastname">
+                </div>
+
+                <div class="username">
+                    <input type="text" class="form-control" placeholder="Username"
+                           id="signupUser" name="username" formControlName="user">
+                    <div>
+                    You can use letters, numbers & periods
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password"
+                           id="signupPassword" name="password" formControlName="password">
+                    <input type="password" class="form-control" placeholder="Confirm"
+                           id="signupConfirm" name="confirm" formControlName="confirm">
+                </div>
+                <div class="password">
+                    Use 8 or more characters with a mix of letters, numbers & symbols
+                </div>
+
+                <!-- TODO: show password checkbox -->
+
+                <div class="formend">
+                    <a href="" routerLink="/signin">Sign in instead</a>
+                    <button class='btn-submit'>Next</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="signupfigure col">
+            <figure>
+                <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg">
+                <figcaption>One account. All of Google working for you.</figcaption>
+            </figure>
+        </div>
+    </div>
 </div>
