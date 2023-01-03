@@ -1,6 +1,7 @@
 <div class="compose">
-    <div class="compose-btn">Compose</div>
+    <div class="compose-btn" (click)="compose = true;">Compose</div>
 </div>
+<app-composer *ngIf="compose" (closeEvent)="compose = false;"></app-composer>
 <ul>
     <a routerLink="/mail/inbox">
         <li [ngClass]="{'primaryselected': (curlabel$ | async) == 'inbox'}">

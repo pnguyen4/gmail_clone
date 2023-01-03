@@ -21,6 +21,7 @@ import { emailReducer } from './store/email/email.reducers';
 import { EmailEffects } from './store/email/email.effects';
 import { labelReducer } from './store/label/label.reducers';
 import { LabelEffects } from './store/label/label.effects';
+import { ComposerComponent } from './components/composer/composer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LabelEffects } from './store/label/label.effects';
     SidebarComponent,
     SigninComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    ComposerComponent
   ],
   imports: [
     BrowserModule,

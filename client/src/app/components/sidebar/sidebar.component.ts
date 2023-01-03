@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
   curlabel$ = this.store.select(selectCurrentLabel);
   labelname = new FormControl('', Validators.required);
   labelprompt: boolean = false;
+  compose: boolean = false;
 
   constructor(private store: Store) { }
 
