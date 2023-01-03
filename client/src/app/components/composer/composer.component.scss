@@ -49,6 +49,11 @@ input {
     padding: 0;
 }
 
+input:-webkit-autofill {
+    background-color: #fff !important;
+    background: #fff !important;
+}
+
 input:autofill {
     background-color: #fff !important;
     background: #fff !important;
