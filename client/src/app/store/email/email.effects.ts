@@ -18,7 +18,7 @@ export class EmailEffects {
   loadEmails$ = createEffect(() => this.actions$.pipe(
     ofType('[Home Page] Load Emails'),
     mergeMap(() =>
-      // TODO: fetch all emails and handle filtering & pagination on client side, OR use actual label string
+      // TODO: fetch all emails and handle pagination on client side
       from(this.emailService.fetchEmailList()).pipe(
         // TODO: rethink server return to actually get to error?
         map((data) => EmailApiAction.loadEmailsSuccess({ emails: data.emails })),

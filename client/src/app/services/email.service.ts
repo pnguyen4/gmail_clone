@@ -26,4 +26,8 @@ export class EmailService {
   modifyLabels(id: string, labels: string[]): Observable<any> {
     return this.http.put(`${API_URL}/mail/${id}`, {labels});
   }
+
+  sendEmail(recipients: string[], subject: string, body: string): Observable<any> {
+    return this.http.post<any>(`${API_URL}/mail`, {recipients, subject, body});
+  }
 }

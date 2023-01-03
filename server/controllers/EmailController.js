@@ -57,3 +57,22 @@ exports.modify_email_labels = async (req, res) => {
     return res.json({status: "error", msg: error});
   }
 }
+
+exports.send_email = async (req, res) => {
+  try {
+    let email = {
+      subject: req.body.subject,
+      body: req.body.body,
+      recipients: req.body.recipients,
+      sender: req.user.email,
+      owner: req.user.id,
+      labels: ["sent"],
+    }
+    // TODO: create email for all recipienst, with 'inbox' label
+    const newemail = await Email.create(email);
+    return res.json({status: 'success', email: newemail})
+  } catch (error) {
+    return res.json({status: "error", msg: error});
+  }
+}
+//router.post('/mail', auth, controller.send_email);

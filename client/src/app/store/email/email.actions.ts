@@ -10,7 +10,7 @@ export const EmailAction = createActionGroup({
     'Set Current Email': props<{ id: string }>(),
     'Delete Label': props<{ id: string, label: string }>(),
     'Add Label': props<{ id: string, label: string }>(),
-    'Modify Labels': props<{ id: string, labels: string[] }>()
+    'Modify Labels': props<{ id: string, labels: string[] }>(),
   }
 });
 

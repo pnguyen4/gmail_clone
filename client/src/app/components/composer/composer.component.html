@@ -2,19 +2,22 @@
     <div>New Message</div>
 </div>
 <div class="composemain">
-    <form>
+    <form [formGroup]="form">
         <div class="form-group">
-            <input type="text" placeholder="Recipients">
+            <input type="text" placeholder="Recipients"
+                   name="recipients" formControlName="recipients">
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Subject">
+            <input type="text" placeholder="Subject"
+                   name="subject" formControlName="subject">
         </div>
         <div class="composebody">
-            <textarea></textarea>
+            <textarea name="body" formControlName="body">
+            </textarea>
         </div>
     </form>
 </div>
 <div class="composebar">
-    <button class="sendbtn">Send</button>
+    <button class="sendbtn" (click)="submit()">Send</button>
     <div class="deletedraft" (click)="closeComposer()"></div>
 </div>
