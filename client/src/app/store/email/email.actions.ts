@@ -8,9 +8,9 @@ export const EmailAction = createActionGroup({
   events: {
     'Load Emails': emptyProps(),
     'Set Current Email': props<{ id: string }>(),
-    'Delete Label': props<{ id: string, label: string }>(),
-    'Add Label': props<{ id: string, label: string }>(),
-    'Modify Labels': props<{ id: string, labels: string[] }>(),
+    'Remove Email Label': props<{ id: string, label: string }>(),
+    'Add Email Label': props<{ id: string, label: string }>(),
+    'Modify Email Labels': props<{ id: string, labels: string[] }>(),
   }
 });
 

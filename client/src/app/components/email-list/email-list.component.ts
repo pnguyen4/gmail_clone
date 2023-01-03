@@ -32,9 +32,9 @@ export class EmailListComponent implements OnInit {
 
   toggleStar(email: any) {
     if (email.labels.includes('starred')) {
-      this.store.dispatch(EmailAction.deleteLabel({id: email._id, label: 'starred'}));
+      this.store.dispatch(EmailAction.removeEmailLabel({id: email._id, label: 'starred'}));
     } else {
-      this.store.dispatch(EmailAction.addLabel({id: email._id, label: 'starred'}));
+      this.store.dispatch(EmailAction.addEmailLabel({id: email._id, label: 'starred'}));
     }
   }
 }

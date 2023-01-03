@@ -28,17 +28,17 @@ export class EmailEffects {
   ));
 
   addEmailLabel$ = createEffect(() => this.actions$.pipe(
-    ofType('[Home Page] Add Label'),
+    ofType('[Home Page] Add Email Label'),
     switchMap((action: any) => this.emailService.addLabel(action.id, action.label).pipe())
   ));
 
   delEmailLabel$ = createEffect(() => this.actions$.pipe(
-    ofType('[Home Page] Delete Label'),
+    ofType('[Home Page] Remove Email Label'),
     switchMap((action: any) => this.emailService.deleteLabel(action.id, action.label).pipe())
   ));
 
   modifyEmailLabels$ = createEffect(() => this.actions$.pipe(
-    ofType('[Home Page] Modify Labels'),
+    ofType('[Home Page] Modify Email Labels'),
     switchMap((action: any) => this.emailService.modifyLabels(action.id, action.labels).pipe())
   ));
 }

@@ -47,13 +47,13 @@ export class EmailViewComponent implements OnInit {
 
   submit(): void {
     if (this.checkboxvals.length > 0) {
-      this.store.dispatch(EmailAction.modifyLabels({id: this.id, labels: this.checkboxvals}));
+      this.store.dispatch(EmailAction.modifyEmailLabels({id: this.id, labels: this.checkboxvals}));
       this.labelprompt = false;
     }
   }
 
   trash(): void {
-    this.store.dispatch(EmailAction.modifyLabels({id: this.id, labels: ['trash']}));
+    this.store.dispatch(EmailAction.modifyEmailLabels({id: this.id, labels: ['trash']}));
     this.router.navigate(['..']);
   }
 }

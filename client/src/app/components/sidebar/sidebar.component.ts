@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { FormControl, Validators } from '@angular/forms';
 import { LabelAction } from '../../store/label/label.actions';
-//import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { selectAllLabels, selectCurrentLabel } from '../../store/label/label.selectors';
 
@@ -19,7 +19,8 @@ export class SidebarComponent implements OnInit {
   labelprompt: boolean = false;
   compose: boolean = false;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store,
+              private router: Router) { }
 
   ngOnInit(): void {
   }

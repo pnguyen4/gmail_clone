@@ -49,17 +49,17 @@ export const emailReducer = createReducer(
     current_email: id
   })),
 
-  on(EmailAction.addLabel, (state, { id, label }) => ({
+  on(EmailAction.addEmailLabel, (state, { id, label }) => ({
     ...state,
     emails: addhelper(state.emails, id, label)
   })),
 
-  on(EmailAction.deleteLabel, (state, { id, label }) => ({
+  on(EmailAction.removeEmailLabel, (state, { id, label }) => ({
     ...state,
     emails: delhelper(state.emails, id, label)
   })),
 
-  on(EmailAction.modifyLabels, (state, { id, labels }) => ({
+  on(EmailAction.modifyEmailLabels, (state, { id, labels }) => ({
     ...state,
     emails: modifyhelper(state.emails, id, labels)
   })),
