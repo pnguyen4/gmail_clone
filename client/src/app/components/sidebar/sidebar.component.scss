@@ -18,6 +18,11 @@
     font-weight: 500;
 }
 
+.compose-btn:hover {
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302),
+                0 4px 8px 3px rgba(60,64,67,0.149)
+}
+
 .compose-btn::before {
     background-image:
         url('https://www.gstatic.com/images/icons/material/system_gm/1x/create_black_24dp.png');

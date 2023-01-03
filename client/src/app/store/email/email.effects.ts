@@ -36,4 +36,9 @@ export class EmailEffects {
     ofType('[Home Page] Delete Label'),
     switchMap((action: any) => this.emailService.deleteLabel(action.id, action.label).pipe())
   ));
+
+  modifyEmailLabels$ = createEffect(() => this.actions$.pipe(
+    ofType('[Home Page] Modify Labels'),
+    switchMap((action: any) => this.emailService.modifyLabels(action.id, action.labels).pipe())
+  ));
 }

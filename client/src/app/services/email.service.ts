@@ -22,4 +22,8 @@ export class EmailService {
   deleteLabel(id: string, label: string): Observable<any> {
     return this.http.delete(`${API_URL}/mail/${label}/${id}`);
   }
+
+  modifyLabels(id: string, labels: string[]): Observable<any> {
+    return this.http.put(`${API_URL}/mail/${id}`, {labels});
+  }
 }
