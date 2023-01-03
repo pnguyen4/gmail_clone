@@ -1,4 +1,4 @@
-#+title: Project Proposal: Gmail Clone
+#+title: Project: Gmail Clone
 #+author: Phillip Nguyen\\
 
 * _Tools_
@@ -6,9 +6,9 @@
 - Bootstrap
 - SCSS
 *** Frontend Libraries
-- Angular
+- Angular (ReactiveForms, HttpClient, HttpInterceptor, Router)
 - RxJs
-- NgRx
+- NgRx (store, effects)
 *** Backend Technologies & Libraries
 - Node.js
 - express
@@ -16,14 +16,14 @@
 - jsonwebtoken
 - bcryptjs
 - mongoose
-- joi
+- cors
 
 * _Features_
 1. *Auth* (register, log in, log out)
    - users authenticated with JWT
    - input fields sanitized and validated
    - token stored on client's localStorage for persistent login
-   - delete token on client side and maintain backend blacklist for logout\\
+   - TODO: delete token on client side and maintain backend blacklist for logout\\
 2. *Email List*:  users should be able to scroll through emails
    1. Maximum 50 emails in list, each displayed as a row. Use left/right buttons for pagination.
    2. Each row should have:
@@ -31,18 +31,18 @@
       - checkbox to mark emails to do one of:
         - deletion
         - tagging with label
-        - mark as read/unread\\
+        - TODO: mark as read/unread\\
 3. *Email Sidebar*: displays a list of labels (by default: inbox, starred, sent, trash).
    1. Has a '+' button to create new labels. Each custom label should have option to:
       - create label
       - delete label
-      - edit label name
+      - TODO: edit label name
    2. clicking on a label will update the email list component to show only emails with that label (default: inbox label is selected)\\
 4. *Compose Email*: a form to create a new email from User A to User B, C, D.
 
    To narrow the scope of the project I will not be using any email protocols, just storing and retrieving emails with a non-relational database.
    - form will create new email belonging to User A with 'sent' label
-   - form will create new email belonging to recipient Users with 'inbox' label
+   - TODO: form will create new email belonging to recipient Users with 'inbox' label
 
 * _Models_
 
@@ -53,8 +53,8 @@
 
 *** Entities
 User:
-- email: ~string~, required, unique
-- password: ~string~, required
+- email: ~string~, required, unique, valid email
+- password: ~string~, required, standard complexity requirements
 - emails: ~[ref(Email)]~, default: ~[]~
 - customlabels: ~[string]~, default: ~[]~
 
@@ -65,3 +65,4 @@ Email:
 - owner: ~ref(User)~, required
 - recipients:  ~[string]~, required, minlen = 1
 - labels:  ~[string]~, default: ~["inbox"]~
+- date: ~Date~, default: ~Date.now()~
