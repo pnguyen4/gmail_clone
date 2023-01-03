@@ -72,9 +72,8 @@ exports.send_email = async (req, res) => {
     // TODO: create email for all recipienst, with 'inbox' label
     for (let recipient of req.body.recipients) {
       let touser = await User.findOne({email: recipient});
-      console.log(touser)
       if (touser) {
-        console.log("sending email")
+        console.log("sending email...")
         let db_email = await Email.create({...email, owner: touser._id, labels: ["inbox"]});
         await User.updateOne({_id: touser._id}, {$push: { emails: db_email._id }});
       }
