@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from "@angular/router"
 
 import { FooterComponent } from '../footer/footer.component';
 import { selectEmails } from '../../store/email/email.selectors';
+import { EmailAction } from '../../store/email/email.actions';
 
 @Component({
   selector: 'app-email-list',
@@ -27,5 +28,13 @@ export class EmailListComponent implements OnInit {
 
   goto(id: string) {
     this.router.navigate([`${id}`], {relativeTo: this.activatedRoute});
+  }
+
+  toggleStar(email: any) {
+    if (email.labels.includes('starred')) {
+      this.store.dispatch(EmailAction.deleteLabel({id: email._id, label: 'starred'}));
+    } else {
+      this.store.dispatch(EmailAction.addLabel({id: email._id, label: 'starred'}));
+    }
   }
 }

@@ -14,4 +14,12 @@ export class EmailService {
   fetchEmailList(): Observable<any> {
     return this.http.get<any>(`${API_URL}/mail`);
   }
+
+  addLabel(id: string, label: string): Observable<any> {
+    return this.http.put(`${API_URL}/mail/${label}/${id}`, {});
+  }
+
+  deleteLabel(id: string, label: string): Observable<any> {
+    return this.http.delete(`${API_URL}/mail/${label}/${id}`);
+  }
 }

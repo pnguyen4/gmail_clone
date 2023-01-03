@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of, from } from 'rxjs';
-import { mergeMap, map, catchError, withLatestFrom } from 'rxjs/operators';
+import { switchMap, mergeMap, map, catchError, withLatestFrom } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EmailService } from '../../services/email.service';
@@ -27,4 +27,13 @@ export class EmailEffects {
     )
   ));
 
+  addEmailLabel$ = createEffect(() => this.actions$.pipe(
+    ofType('[Home Page] Add Label'),
+    switchMap((action: any) => this.emailService.addLabel(action.id, action.label).pipe())
+  ));
+
+  delEmailLabel$ = createEffect(() => this.actions$.pipe(
+    ofType('[Home Page] Delete Label'),
+    switchMap((action: any) => this.emailService.deleteLabel(action.id, action.label).pipe())
+  ));
 }

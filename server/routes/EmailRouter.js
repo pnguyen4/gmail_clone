@@ -7,6 +7,7 @@ router.get('/mail', auth, controller.get_emails);
 // We just get all emails and display by label on client
 //router.get('/mail/:label', auth, controller.get_emails);
 
-//router.get('/mail/:label/:id', auth, controller.get_email);
+router.put('/mail/:label/:id', auth, controller.add_email_label);
+router.delete('/mail/:label/:id', auth, controller.rm_email_label);
 
 module.exports = router;

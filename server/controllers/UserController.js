@@ -40,7 +40,7 @@ exports.rm_label = async (req, res) => {
                            { customlabels: req.body.label }
                          });
     // TODO: remove this label from all of user's emails
-    return res.json({status: 'success'})
+    return res.json({status: 'success'});
   } catch (error) {
     return res.json({status: 'error', error});
   }

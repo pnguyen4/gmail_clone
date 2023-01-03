@@ -17,3 +17,27 @@ exports.get_emails = async (req, res) => {
     return res.json({status: "error", msg: error})
   }
 };
+
+exports.add_email_label = async (req, res) => {
+  try {
+    await Email.updateOne({_id: req.params.id, owner: req.user.id},
+                          { "$addToSet":
+                            { labels: req.params.label }
+                          });
+    return res.json({status: 'success'});
+  } catch (error) {
+    return res.json({status: "error", msg: error})
+  }
+}
+
+exports.rm_email_label = async (req, res) => {
+  try {
+    await Email.updateOne({_id: req.params.id, owner: req.user.id},
+                          { "$pull":
+                            { labels: req.params.label }
+                          });
+    return res.json({status: 'success'});
+  } catch (error) {
+    return res.json({status: "error", msg: error})
+  }
+}

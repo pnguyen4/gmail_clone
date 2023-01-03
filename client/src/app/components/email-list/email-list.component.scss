@@ -12,10 +12,17 @@
     background-image:     url("https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/check_box_outline_blank_baseline_nv700_20dp.png");
 }
 
-.star {
+.notstar {
     @include email-button;
     background-image:
        url("https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/star_baseline_nv700_20dp.png");
+}
+
+.star {
+    @include email-button;
+    opacity: 0.7;
+    background-image:
+       url('https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/star_fill_googyellow500_20dp.png');
 }
 
 table {

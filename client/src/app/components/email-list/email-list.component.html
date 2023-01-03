@@ -4,7 +4,10 @@
     <tbody>
         <tr *ngFor="let email of emails$ | async">
             <td><div class="checkbox"></div></td>
-            <td><div class="star"></div></td>
+            <td>
+                <div [ngClass]="email.labels.includes('starred') ? 'star' : 'notstar'"
+                     (click)="toggleStar(email)"></div>
+            </td>
             <td class="sender" (click)="goto(email._id)">
                 <div class="tdcontent">
                     {{email.sender.substring(0, email.sender.indexOf('@'))}}
