@@ -42,7 +42,7 @@
 
    To narrow the scope of the project I will not be using any email protocols, just storing and retrieving emails with a non-relational database.
    - form will create new email belonging to User A with 'sent' label
-   - TODO: form will create new email belonging to recipient Users with 'inbox' label
+   - form will create new email belonging to recipient Users with 'inbox' label
 
 * _Models_
 
