@@ -2,6 +2,7 @@ const path = require('path');
 require("dotenv").config({ path: path.join(__dirname, '../.env') });
 
 const Email = require('../models/Email');
+const User = require('../models/User');
 
 exports.get_emails = async (req, res) => {
   try {
@@ -69,6 +70,15 @@ exports.send_email = async (req, res) => {
       labels: ["sent"],
     }
     // TODO: create email for all recipienst, with 'inbox' label
+    for (let recipient of req.body.recipients) {
+      let touser = await User.findOne({email: recipient});
+      console.log(touser)
+      if (touser) {
+        console.log("sending email")
+        let db_email = await Email.create({...email, owner: touser._id, labels: ["inbox"]});
+        await User.updateOne({_id: touser._id}, {$push: { emails: db_email._id }});
+      }
+    }
     const newemail = await Email.create(email);
     return res.json({status: 'success', email: newemail})
   } catch (error) {
