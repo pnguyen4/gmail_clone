@@ -3,7 +3,7 @@ const path = require('path');
 require("dotenv").config({ path: path.join(__dirname, '../.env') });
 //const Blacklist = require("../models/Blacklist");
 
-module.exports = async (req, res, next) => {
+exports.regtoken = async (req, res, next) => {
   const token = req.headers.authorization;
   if (!token) {
     return res.json({status: "error", msg: "User not signed in"});

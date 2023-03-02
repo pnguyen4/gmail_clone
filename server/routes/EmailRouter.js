@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const controller = require('../controllers/EmailController.js');
-const auth = require('../middleware/auth.js');
+const middleware = require('../middleware/auth.js');
+const auth = middleware.regtoken;
 
 router.get('/mail', auth, controller.get_emails);
 

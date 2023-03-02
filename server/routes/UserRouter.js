@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const controller = require("../controllers/UserController.js");
-const auth = require('../middleware/auth.js');
+const middleware = require('../middleware/auth.js');
+const auth = middleware.regtoken;
 
 router.get('/labels', auth, controller.get_labels);
 router.put('/addlabel', auth, controller.add_label);
