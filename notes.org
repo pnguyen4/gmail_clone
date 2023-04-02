@@ -1,0 +1,8 @@
+#+title: Notes
+#+author: Phillip Nguyen
+
+* SOFT TODOs
+1. seed more emails
+2. finish header things (add last buttons)
+3. add read field to email schema?
+4. finish styling login, logout, email view
