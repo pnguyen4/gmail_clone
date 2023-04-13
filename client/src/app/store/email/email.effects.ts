@@ -4,7 +4,7 @@ import { switchMap, mergeMap, map, catchError, withLatestFrom } from 'rxjs/opera
 import { Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { EmailService } from '../../services/email.service';
-import { EmailApiAction } from './email.actions';
+import { EmailAction, EmailApiAction } from './email.actions';
 
 // The GOAT: https://ngrx.io/guide/effects
 
@@ -16,7 +16,7 @@ export class EmailEffects {
               private emailService: EmailService) {}
 
   loadEmails$ = createEffect(() => this.actions$.pipe(
-    ofType('[Home Page] Load Emails'),
+    ofType('EmailAction.loadEmails'),
     mergeMap(() =>
       // TODO: fetch all emails and handle pagination on client side
       from(this.emailService.fetchEmailList()).pipe(
